@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     # 作成したアプリケーションを追加する
     'core.apps.CoreConfig',
-    # 'api_user.apps.ApiUserConfig',
-    # 'api_pantry.apps.ApiPantryConfig',
+    'user.apps.UserConfig',
+    'pantry.apps.PantryConfig',
 ]
 
 MIDDLEWARE = [
