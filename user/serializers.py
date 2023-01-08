@@ -3,9 +3,6 @@ from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 
 class UserSerializer(serializers.ModelSerializer):
-    model = get_user_model()
-    field = ('id', 'email', 'password')
-    extra_kwargs = {'password': {'write_only':True}}
 
     class Meta:
         model = get_user_model()
