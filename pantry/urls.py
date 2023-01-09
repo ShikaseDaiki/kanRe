@@ -5,7 +5,7 @@ from pantry import views
 app_name = 'pantry'
 
 router = DefaultRouter()
-router.register('pantry', views.PantryViewSet)
+router.register('', views.PantryViewSet)
 
 urlpatterns = [
     path('', include(router.urls))

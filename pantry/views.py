@@ -6,7 +6,7 @@ from rest_framework import authentication, permissions
 
 class PantryViewSet(viewsets.ModelViewSet):
     queryset = Pantry.objects.all()
-    serializer_class = serializers.Pantry
+    serializer_class = serializers.PantrySerializer
     authentication_classes = (authentication.TokenAuthentication,)
     permission_classes = (permissions.IsAuthenticated,)
 
