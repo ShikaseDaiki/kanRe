@@ -7,5 +7,6 @@ class PantrySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Pantry
-        fields = ('id', 'name', 'user_id', 'created_at', 'updated_at')
-        # extra_kwargs = {'user_id': {'read_only': True}}
+        fields = ('id', 'name', 'user', 'created_at', 'updated_at')
+        extra_kwargs = {'user': {'read_only': True}}
+

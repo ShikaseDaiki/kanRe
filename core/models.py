@@ -35,7 +35,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Pantry(models.Model):
     name = models.CharField(max_length=50)
-    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="pantry_user", on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="pantry_user", on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -51,7 +51,7 @@ class IngredientType(models.Model):
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=40)
-    pantry_id = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="ingredient_pantry", on_delete=models.CASCADE)
+    pantry = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="ingredient_pantry", on_delete=models.CASCADE)
     amount = models.IntegerField()
     expirty_date = models.DateField()
     Ingredient_type = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="ingredient_ingredientType",on_delete=models.CASCADE)

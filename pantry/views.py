@@ -12,3 +12,9 @@ class PantryViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return self.queryset.filter(user_id = self.request.user)
+
+    def perform_create(self, serializer):
+        try: 
+            serializer.save(user=self.request.user)
+        except:
+            raise ValueError("ユーザー名は必須です")
